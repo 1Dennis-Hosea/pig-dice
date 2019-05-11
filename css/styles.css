@@ -1,3 +1,23 @@
-body{
-  background-color: red;
+body {
+  background-image: url("https://images.pexels.com/photos/278943/pexels-photo-278943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+#twoPlayer {
+  text-align: center;
+  display: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+  font-size: 38p
+}
+#rules{
+  display: none;
 }

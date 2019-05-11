@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>PIG DICE</title>
-      <link href="css/bootstrap.css" rel="stylesheet">
-      <link href="css/styles.css" rel="stylesheet">
+    <meta http-equiv="X-UA-compatible">
+    <meta name="viewport" value="width=device-width, initial-scale=1">
+    <title>Play Pig-Dice</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
-      <h1> The Pig Dice</h1>
+      <h1>Play Pig-Dice</h1>
       <div class="row">
-        <div class="col-md-4">
-        <h3 id="rules">Rules of Play:</h3>
-        <p> here is how to play...</p>
-        <ul>
-          <li>role the dice.</li>
-          <li>get "1" and your turn is over</li>
-          <li>player does not get "1" then amount of die is added to their score.</li>
-          <li>hold and the turn amount is added to the score</li>
-          <li>repeat until you have 100+++</li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <div class="details">
-          <h2>Playing zone</h2>
-          <h4 id="currentPlayer">Current The Player</h4>
-            <h4 id="currentScore">Current Turn Score</h4>
+        <div class="col-xs-4">
+          <h3 id="rules">Rules of Play:</h3>
+          <ul>
+            <li>A player rolls the dice</li>
+            <li>If the player gets "1" then their turn is over and they score 0.</li>
+            <li>If the player does not get "1" then the die amount is added to their turn score and they can roll again or hold.</li>
+            <li>When the player holds, their turn amount is added to their total score.</li>
+            <li>Repeat until one player has 100 points ore more.</li>
+          </ul>
         </div>
-        <div id="displayDie"><img src='https://images.pexels.com/photos/37524/cube-six-gambling-play-37524.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' class='img-responsive'></div>
+        <div class="col-xs-4">
+          <div id="info">
+            <h3>Playing Area</h3>
+            <h4 id="currentPlayer">Current Player Name</h4>
+            <h4 id="currentScore">Current Turn Score</h4>
+          </div>
+          <div id="displayDie"><img src='img/roll.png' class='img-responsive'></div>
           <p>
             <button class="btn btn-default pull-right" id="roll">Roll Again</button>
             <button class="btn btn-default pull-left" id="hold">Hold</button>
-            <div class="col-xs-4">
+          </p>
+        </div>
+        <div class="col-xs-4">
           <h3 id="players">Players</h3>
           <ul id="listPlayers">
             <!-- players are added dynamically -->
@@ -43,8 +47,22 @@
           <input type="text" id="playerName"><br>
           <button class="btn btn-default" id="addPlayer">Add Player</button>
           <button class="btn btn-default" id="playGame">(re)Start Game</button>
+<div class="game">
+<div class="col-xs-4">
+<div class="winners">
+  <h1>WINNERS</h1>
+<p>if you win you get</p>
+  <img src="https://media2.giphy.com/media/3oEjHB5itATFgqYIAo/giphy.gif?cid=790b76115cd74060516e64664925df35&rid=giphy.gif" alt="gif">
+</div>
+</div>
+<div class="col-xs-4">
+<div class="losers">
+  <h1>LOSERS</h1>
+  <p> Losers get this</p>
         </div>
-
+      </div>
     </div>
+  <script src="js/jquery-1.12.2.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/scripts.js"></script>
   </body>
-</html>
