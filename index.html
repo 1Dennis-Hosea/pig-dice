@@ -1,92 +1,50 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow|Philosopher|Sancreek|UnifrakturCook:700" rel="stylesheet">
-    <script src="js/jquery-3.1.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <title>PIG DICE GAME</title>
+    <title>PIG DICE</title>
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="preheader">
-      <p class="header">Pig Dice</p>
-    </div>
     <div class="container">
-      <div class="row" id="intro">
-        <div class="col-md-12 spacer">
-          <div class="wrapper">
-            <p>
-            <label for="gameChoice"> Two Players
-              <input type="radio" name="gameChoice" value="twoPlayer" checked>
-            </label>
-          </p>
-            <button type="button" id="gameChoice" class = "btn btn-success btn-lg" name="button">Play</button>
-          </div>
-        </div>
-      </div>
-      <div class="row" id="instructions">
-        <h1><hr>RULES<hr></h1>
+      <h1> The Pig Dice</h1>
+      <div class="row">
+        <div class="col-md-4">
+        <h3 id="rules">Rules of Play:</h3>
+        <p> here is how to play...</p>
         <ul>
-
-
-          <li>The rules are simple. Two  players will compete. The first player to reach 100 points or more is the winner. </li>
-          <li>When it is your turn, you roll. If you get a Pig-Out or an Oinker, then you pass the pigs onto the next player.</li>
-          <li> If you get anything else, you may decide to roll again or pass the pigs.</li>
-          <li> If you keep rolling again, you accumulate points to add to your bank but if you get a Pig-Out, then all your points accumulated this turn are nullified.</li>
-          <li> © 2017 APIUT TOEL </li>
+          <li>role the dice.</li>
+          <li>get "1" and your turn is over</li>
+          <li>player does not get "1" then amount of die is added to their score.</li>
+          <li>hold and the turn amount is added to the score</li>
+          <li>repeat until you have 100+++</li>
         </ul>
       </div>
-
-      <div class="row" id="twoPlayer">
-        <div class="col-md-12 spacer">
-          <div class="wrapper center">
-              <h2>Dice:</h2>
-              <div id="dice">
-                <img src="img/1.png"/>
-              </div>
-              <div id="winner">
-              </div>
+      <div class="col-md-4">
+        <div class="details">
+          <h2>Playing zone</h2>
+          <h4 id="currentPlayer">Current The Player</h4>
+            <h4 id="currentScore">Current Turn Score</h4>
+        </div>
+        <div id="displayDie"><img src='https://images.pexels.com/photos/37524/cube-six-gambling-play-37524.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' class='img-responsive'></div>
+          <p>
+            <button class="btn btn-default pull-right" id="roll">Roll Again</button>
+            <button class="btn btn-default pull-left" id="hold">Hold</button>
+            <div class="col-xs-4">
+          <h3 id="players">Players</h3>
+          <ul id="listPlayers">
+            <!-- players are added dynamically -->
+          </ul>
+          <div id="listPlayerScores">
+            <!-- players and scores are added dynamically -->
           </div>
-
+          <h4>Add Player:</h4>
+          <input type="text" id="playerName"><br>
+          <button class="btn btn-default" id="addPlayer">Add Player</button>
+          <button class="btn btn-default" id="playGame">(re)Start Game</button>
         </div>
-        <div class="col-md-6 spacer bgColor">
-          <div class="wrapper player1">
-            <h2> Player 1</h2>
-            <div id="player1RunningTotal">
-              Running Total: 0
-            </div>
-            <div id="player1Total">
-              Total: 0
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 spacer bgColor">
-          <div class="wrapper player2">
-              <h2>Player 2</h2>
-              <div id="player2RunningTotal">
-                Running Total: 0
-              </div>
-              <div id="player2Total">
-                Total: 0
-              </div>
-          </div>
-        </div>
-
-        <div class="center">
-          <button type="button" id="roll" class = "btn btn-success btn-lg" name="button">Roll</button>
-          <button type="button" id="hold" class = "btn btn-warning btn-lg" name="button">Hold</button>
-
-        </div>
-      </div>
-
-
-
 
     </div>
-
   </body>
 </html>
