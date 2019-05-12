@@ -62,6 +62,7 @@ Player.prototype.hold = function () {
         alert("Game Over. You win!!!!");
         resetFields();
         alert('To play with a new partner click New Game.')
+
     } else {
         return false;
     }

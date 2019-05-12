@@ -1,77 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-compatible">
-    <meta name="viewport" value="width=device-width, initial-scale=1">
-    <title>Play Pig-Dice</title>
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-      <h1>Play Pig-Dice</h1>
-      <div class="row">
-        <div class="col-xs-4">
-          <h3 id="rules">Rules of the players:</h3>
-          <div class="walrus-hidden">
-          <span class="clickable">Click here</span> to see the rules!</p>
 
-          <ul>
-            <li>A player rolls the dice</li>
-            <li>If the player gets "1" then their turn is over and they score 0.</li>
-            <li>If the player does not get "1" then the die amount is,
-               added to their turn score and they can roll again or hold.</li>
-            <li>When the player holds, their turn amount is added to their total score.</li>
-            <li>Repeat until one player has 100 +++</li>
-          </ul>
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <div id="info">
-            <h3>Playing Area</h3>
-            <h4 id="currentPlayer">Current Player Name</h4>
-            <h4 id="currentScore">Current Turn Score</h4>
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.4.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pig Dice Game</title>
+</head>
 
-          <p>
-            <button class="btn btn-default pull-right" id="roll">Roll Again</button>
-            <button class="btn btn-default pull-left" id="hold">Hold</button>
-          </p>
-        </div>
-        <div class="col-xs-4">
-          <h3 id="players">Players</h3>
-          <ul id="listPlayers">
-            <!-- players are added dynamically -->
-          </ul>
-          <div id="listPlayerScores">
-            <!-- players and scores are added dynamically -->
-          </div>
-          <h4>Add Player:</h4>
-          <input type="text" id="playerName"><br>
-          <button class="btn btn-default" id="addPlayer">Add Player</button>
-          <button class="btn btn-default" id="playGame">(re)Start Game</button>
-          <div class="results">
-            <p>did you enjoy?</p>
-            <button class="btn btn-default" id="YES">YES</button>
-            <button class="btn btn-default" id="NO">NO</button>
-          </div>
-<div class="game">
-<div class="col-xs-4">
-<div class="winners">
-  <h1>WINNERS</h1>
-<p>if you win you get</p>
-  <img src="https://media2.giphy.com/media/3oEjHB5itATFgqYIAo/giphy.gif?cid=790b76115cd74060516e64664925df35&rid=giphy.gif" alt="gif" height="300px" width="300px">
-</div>
-</div>
-<div class="col-xs-4">
-<div class="losers">
-  <h1>LOSERS</h1>
-  <p> Losers get this</p>
-        </div>
-      </div>
+<body class="container">
+    <!-- The Title Section with a logo and page name  -->
+    <div id="game">
+        <h1><img src="https://static.thenounproject.com/png/62727-200.png" alt="icon">Pig Dice Games!</h1>
     </div>
-  <script src="js/jquery-3.4.0.js"></script>
-  <script src="js/scripts.js"></script>
-  </body>
+    <!-- The rules for game play   -->
+    <section id="rulesSection">
+        <div id="rulesHeader">
+            <h3 id="rules">Rules</h3>
+        </div>
+        <div id="rulesDefinitions">
+          <p>Take a look at the rules but first:</p>
+            <p>This is a simple dice game where two players have the chance to roll the dice to try and achieve a score of 100.</p>
+            <p>The rules of the game are:</p>
+            <ul>
+                <li>When the you roll a 2 - 6, the dice score is added to their turn total and they can continue to play.</li>
+                <li>When a player rolls a 1, their total score reverts to 0 and it becomes the next player's turn.</li>
+                <li>When the player chooses to "hold"(pass their turn), their turn total is added to their total score, and it becomes the next player's turn.</li>
+                <li>The player who first scores 100+++.</li>
+            </ul>
+            <p>good luck!</p>
+        </div>
+    </section>
+    <!--The players names input form-->
+    <section id="playingForm">
+        <h3 class="newGame">New Game</h3>
+        <form id="playerNames" class="form-group">
+            <h3>Names:</h3>
+            <div class="row">
+                <section class="col-md-6">
+                    <label for="player1">Player1</label>
+                    <input type="text" required id="player1Name" class="form-control">
+                </section>
+                <section class="col-md-6">
+                    <label for="player1">Player2</label>
+                    <input type="text" required id="player2Name" class="form-control">
+                </section>
+            </div>
+            <button type="submit" class="btn" id="playButton">Play</button>
+        </form>
+    </section>
+    <!-- The gaming area for player 1 and 2-->
+    <section id="gamingArea" class="row">
+        <section class="col-md-6 player1Area">
+            <h4 class="player1NameOutput"></h4>
+            <img src="https://static.thenounproject.com/png/214076-200.png" alt="Image Icon ">
+            <p>Dice Roll: <span class="diceRoll1"></span></p>
+            <p>Turn Score: <span class="turnScore1"></span></p>
+            <p>Overall Score: <span class="overallScore1"></span></p>
+            <button class="roll1 btn">ROLL</button>
+            <button class="hold1 btn">HOLD</button>
+        </section>
+        <section class="col-md-6 player2Area">
+            <h4 class="player2NameOutput"></h4>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5qNpPBpT0a_wTj12-o4eQgjRfCm_J-qOOqgMJBn5S29SMNKKcYQ" alt="icon">
+            <p>Dice Roll: <span class="diceRoll2"></span></p>
+            <p>Turn Score: <span class="turnScore2"></span></p>
+            <p>Overall Score: <span class="overallScore2"></span></p>
+            <button class="roll2 btn">ROLL</button>
+            <button class="hold2 btn">HOLD</button>
+        </section>
+    </section>
+</body>
+
+</html>
