@@ -14,14 +14,19 @@
       <h1>Play Pig-Dice</h1>
       <div class="row">
         <div class="col-xs-4">
-          <h3 id="rules">Rules of Play:</h3>
+          <h3 id="rules">Rules of the players:</h3>
+          <div class="walrus-hidden">
+          <span class="clickable">Click here</span> to see the rules!</p>
+
           <ul>
             <li>A player rolls the dice</li>
             <li>If the player gets "1" then their turn is over and they score 0.</li>
-            <li>If the player does not get "1" then the die amount is added to their turn score and they can roll again or hold.</li>
+            <li>If the player does not get "1" then the die amount is,
+               added to their turn score and they can roll again or hold.</li>
             <li>When the player holds, their turn amount is added to their total score.</li>
-            <li>Repeat until one player has 100 points ore more.</li>
+            <li>Repeat until one player has 100 +++</li>
           </ul>
+          </div>
         </div>
         <div class="col-xs-4">
           <div id="info">
@@ -29,7 +34,7 @@
             <h4 id="currentPlayer">Current Player Name</h4>
             <h4 id="currentScore">Current Turn Score</h4>
           </div>
-          <div id="displayDie"><img src='img/roll.png' class='img-responsive'></div>
+
           <p>
             <button class="btn btn-default pull-right" id="roll">Roll Again</button>
             <button class="btn btn-default pull-left" id="hold">Hold</button>
@@ -47,12 +52,17 @@
           <input type="text" id="playerName"><br>
           <button class="btn btn-default" id="addPlayer">Add Player</button>
           <button class="btn btn-default" id="playGame">(re)Start Game</button>
+          <div class="results">
+            <p>did you enjoy?</p>
+            <button class="btn btn-default" id="YES">YES</button>
+            <button class="btn btn-default" id="NO">NO</button>
+          </div>
 <div class="game">
 <div class="col-xs-4">
 <div class="winners">
   <h1>WINNERS</h1>
 <p>if you win you get</p>
-  <img src="https://media2.giphy.com/media/3oEjHB5itATFgqYIAo/giphy.gif?cid=790b76115cd74060516e64664925df35&rid=giphy.gif" alt="gif">
+  <img src="https://media2.giphy.com/media/3oEjHB5itATFgqYIAo/giphy.gif?cid=790b76115cd74060516e64664925df35&rid=giphy.gif" alt="gif" height="300px" width="300px">
 </div>
 </div>
 <div class="col-xs-4">
@@ -62,7 +72,6 @@
         </div>
       </div>
     </div>
-  <script src="js/jquery-1.12.2.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="js/jquery-3.4.0.js"></script>
   <script src="js/scripts.js"></script>
   </body>
