@@ -7,7 +7,6 @@ In this game, you are advice to click on the rules and you will be shown what yo
 * Its a fair game. click on rules
 * isert your name.
 
-{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? Do I need to install any dependencies? How should I set up my databases? Is there other code this app depends on?}
 ## Known Bugs
 The game may face hanging issues as a result it is soon to be issued.
 We shall try make users/gamers to play offline.
